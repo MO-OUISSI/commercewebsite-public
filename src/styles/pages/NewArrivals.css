@@ -1,0 +1,163 @@
+/* New Arrivals Page - Clean Design */
+
+.new-arrivals-page {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    color: var(--color-stone-400);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+.breadcrumb-link:hover {
+    color: var(--color-slate-900);
+}
+
+.breadcrumb-current {
+    color: var(--color-slate-900);
+}
+
+/* Hero Section */
+.new-arrivals-hero {
+    background: linear-gradient(135deg, #f8fafb 0%, #e8f4f8 100%);
+    padding: 3rem 2rem;
+    border-radius: 1rem;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 3rem;
+}
+
+.new-arrivals-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 40%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(220, 252, 231, 0.4) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.hero-content {
+    max-width: 48rem;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-label {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-emerald-600);
+    background-color: var(--color-emerald-50);
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    margin-bottom: 1rem;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--color-slate-900);
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+
+@media (min-width: 768px) {
+    .hero-title {
+        font-size: 3.5rem;
+    }
+}
+
+.hero-description {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--color-stone-600);
+    max-width: 42rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 768px) {
+    .hero-description {
+        font-size: 1.125rem;
+    }
+}
+
+/* Products Section */
+.new-arrivals-products {
+    margin-bottom: 2rem;
+}
+
+/* Shop Grid - Matching Shop.css */
+.shop-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    row-gap: 2rem;
+}
+
+@media (min-width: 640px) {
+    .shop-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        row-gap: 3rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .shop-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        row-gap: 3rem;
+    }
+}
+
+.no-products {
+    padding: 5rem 0;
+    text-align: center;
+    color: var(--color-stone-400);
+}
+
+.view-all-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--color-slate-900);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .new-arrivals-page {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    .new-arrivals-hero {
+        padding: 2rem 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-description {
+        font-size: 0.9375rem;
+    }
+}

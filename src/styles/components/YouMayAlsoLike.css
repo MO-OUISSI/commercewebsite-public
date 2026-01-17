@@ -1,0 +1,101 @@
+.you-may-also-like {
+    padding: 4rem 0;
+    background-color: var(--color-stone-50);
+    margin-top: 4rem;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-slate-900);
+    margin: 0;
+}
+
+.scroll-controls {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.scroll-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-stone-200);
+    border-radius: 50%;
+    color: var(--color-slate-900);
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.scroll-btn:hover {
+    background-color: var(--color-slate-900);
+    color: var(--color-white);
+    border-color: var(--color-slate-900);
+}
+
+.scroll-btn:active {
+    transform: scale(0.95);
+}
+
+/* Hide scroll controls on mobile */
+@media (max-width: 768px) {
+    .scroll-controls {
+        display: none;
+    }
+}
+
+.products-scroll-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    margin: 0 -1.5rem;
+    padding: 0 1.5rem;
+}
+
+.products-scroll-container::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Opera */
+}
+
+.products-scroll-content {
+    display: flex;
+    gap: 1.25rem;
+    padding-bottom: 1rem;
+}
+
+.product-scroll-item {
+    flex: 0 0 auto;
+    width: 280px;
+}
+
+@media (max-width: 640px) {
+    .product-scroll-item {
+        width: 240px;
+    }
+}
+
+/* Smooth scroll snap on mobile */
+@media (max-width: 768px) {
+    .products-scroll-container {
+        scroll-snap-type: x mandatory;
+        scroll-padding: 1.5rem;
+    }
+
+    .product-scroll-item {
+        scroll-snap-align: start;
+    }
+}

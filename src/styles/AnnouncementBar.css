@@ -1,0 +1,73 @@
+.announcement-bar {
+    background-color: #000;
+    color: #fff;
+    height: 40px;
+    /* Slight bump for touch targets */
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1001;
+    /* High enough but lower than Mobile Menu */
+    overflow: hidden;
+    font-size: 0.8125rem;
+    /* Better readability */
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.announcement-content {
+    display: flex;
+    white-space: nowrap;
+    width: max-content;
+    animation: scroll-left 60s linear infinite;
+    /* Slower, smoother speed */
+    padding-left: 0;
+}
+
+.announcement-group {
+    display: flex;
+    align-items: center;
+    padding-right: 4rem;
+    /* Spacing between repeated messages */
+    flex-shrink: 0;
+}
+
+.gold-accent {
+    color: #d4af37;
+    font-weight: 700;
+}
+
+/* Keyframes for simple infinite scroll using the fact that we have many duplicates */
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+        /* Move half way (assuming duplicated content fills > 200%) */
+    }
+}
+
+.announcement-bar:hover .announcement-content {
+    animation-play-state: paused;
+}
+
+@media (max-width: 768px) {
+    .announcement-bar {
+        height: 36px;
+        font-size: 0.75rem;
+    }
+
+    .announcement-group {
+        padding-right: 2rem;
+    }
+
+    .announcement-content {
+        animation-duration: 40s;
+        /* Faster on mobile since less width to traverse? Or adjust as needed */
+    }
+}
