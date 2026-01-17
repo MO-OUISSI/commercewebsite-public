@@ -3,7 +3,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import ProductCard from './ProductCard';
 import '../styles/components/YouMayAlsoLike.css';
 
-const YouMayAlsoLike = ({ products, currentProductId, onQuickAdd }) => {
+const YouMayAlsoLike = ({ products, currentProductId }) => {
     const scrollContainerRef = useRef(null);
 
     // Filter out current product and get random suggestions
@@ -58,7 +58,6 @@ const YouMayAlsoLike = ({ products, currentProductId, onQuickAdd }) => {
                             <div key={product.id} className="product-scroll-item">
                                 <ProductCard
                                     product={product}
-                                    onQuickAdd={onQuickAdd}
                                 />
                             </div>
                         ))}

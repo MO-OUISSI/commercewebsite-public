@@ -416,7 +416,6 @@ const ProductDetail = () => {
             <YouMayAlsoLike
                 products={PRODUCTS}
                 currentProductId={product.id}
-                onQuickAdd={(item) => console.log('Quick add:', item)}
             />
 
             {/* Image Zoom Modal */}

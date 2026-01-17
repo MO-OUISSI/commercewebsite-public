@@ -1,6 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
-import storeService from '../api/storeService';
-import { BASE_URL } from '../api/apiClient';
+import React, { createContext, useContext, useState } from 'react';
 import { MOCK_STORE_INFO } from '../data/mockData';
 
 const StoreContext = createContext();

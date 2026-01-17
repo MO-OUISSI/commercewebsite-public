@@ -1,47 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import ProductCard, { ProductCardSkeleton } from '../components/ProductCard';
-import productService from '../api/productService';
+import ProductCard from '../components/ProductCard';
+import { PRODUCTS } from '../data/products';
 import '../styles/pages/NewArrivals.css';
 
 const NewArrivals = () => {
-    const [products, setProducts] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
-
-    useEffect(() => {
-        const fetchNewArrivals = async () => {
-            try {
-                setLoading(true);
-                const result = await productService.getAllProducts();
-
-                let allProducts = [];
-                if (Array.isArray(result)) {
-                    allProducts = result;
-                } else if (result?.data?.products && Array.isArray(result.data.products)) {
-                    allProducts = result.data.products;
-                } else if (result?.products && Array.isArray(result.products)) {
-                    allProducts = result.products;
-                }
-
-                // Filter for new products
-                // backend likely maps 'isNewProduct' to boolean
-                const newArrivals = allProducts.filter(p => p.isNewProduct === true);
-                setProducts(newArrivals);
-                setError(null);
-            } catch (err) {
-                console.error("Failed to fetch new arrivals", err);
-                setError("Failed to load new arrivals. Please try again later.");
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        fetchNewArrivals();
-    }, []);
-
-    // if (loading) return <div className="container py-20 text-center">Loading new arrivals...</div>;
-    if (error) return <div className="container py-20 text-center text-red-500">{error}</div>;
+    // Directly filter from local data for instant performance
+    const products = PRODUCTS.filter(p => p.isNewProduct === true);
 
     return (
         <div className="new-arrivals-page container">
@@ -64,19 +29,12 @@ const NewArrivals = () => {
 
             {/* Products Grid */}
             <section className="new-arrivals-products">
-                {loading ? (
-                    <div className="shop-grid">
-                        {Array(8).fill(0).map((_, i) => (
-                            <ProductCardSkeleton key={i} />
-                        ))}
-                    </div>
-                ) : products.length > 0 ? (
+                {products.length > 0 ? (
                     <div className="shop-grid">
                         {products.map(product => (
                             <ProductCard
                                 key={product.id}
                                 product={product}
-                                onQuickAdd={() => console.log('Add', product.id)}
                             />
                         ))}
                     </div>

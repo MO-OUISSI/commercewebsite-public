@@ -1,38 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { X, ShoppingBag, Sparkles, Info, LayoutGrid, ChevronDown, ChevronUp } from 'lucide-react';
-import collectionService from '../api/collectionService';
 import { useStore } from '../context/StoreContext';
+import { MOCK_COLLECTIONS } from '../data/mockData';
 import '../styles/components/MobileMenu.css';
 
 const MobileMenu = ({ isOpen, onClose }) => {
     const { storeInfo } = useStore();
-    const [collections, setCollections] = useState([]);
     const [isCollectionsOpen, setIsCollectionsOpen] = useState(false);
-
-    useEffect(() => {
-        const fetchCollections = async () => {
-            try {
-                const data = await collectionService.getCollections();
-                if (data?.data?.collections) {
-                    setCollections(data.data.collections);
-                } else if (Array.isArray(data)) {
-                    setCollections(data);
-                }
-            } catch (error) {
-                console.error("Failed to fetch collections for mobile menu", error);
-            }
-        };
-
-        if (isOpen) {
-            fetchCollections();
-        }
-    }, [isOpen]);
 
     const toggleCollections = (e) => {
         e.preventDefault();
         setIsCollectionsOpen(!isCollectionsOpen);
     };
+
+    const collections = MOCK_COLLECTIONS;
 
     return (
         <>
@@ -84,7 +66,7 @@ const MobileMenu = ({ isOpen, onClose }) => {
                                     </Link>
                                 ))
                             ) : (
-                                <div className="submenu-loading">Loading...</div>
+                                <div className="submenu-loading">No collections</div>
                             )}
                         </div>
                     </div>

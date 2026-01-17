@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Clock, Mail, Phone, Facebook, Instagram, Twitter, Youtube, Music2 } from 'lucide-react';
+import { Clock, Facebook, Instagram, Twitter, Youtube, Music2 } from 'lucide-react';
 import { useStore } from '../context/StoreContext';
 import '../styles/pages/About.css';
 

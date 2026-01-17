@@ -112,7 +112,7 @@ export const PRODUCTS = [
     price: 150,
     category: "jeans",
     images: ["/images/products/3.jpg"],
-    isFeatured: true,
+    isFeatured: false,
     isNewProduct: true,
     isActive: true,
     colors: [

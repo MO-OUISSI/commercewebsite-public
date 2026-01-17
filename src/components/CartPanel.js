@@ -11,16 +11,6 @@ const CartPanel = ({ isOpen, onClose }) => {
     const { storeInfo } = useStore();
 
     const deliveryPrice = storeInfo?.deliveryPrice || 0;
-    const isFreeShipping = deliveryPrice === 0 || cartSubtotal > 1000; // Keep logic or adjust as needed, user didn't specify free shipping threshold changes but let's respect the configured price.
-    // Actually, user just said "add admin can add or edit...". Let's stick to the price set in admin.
-    // If admin sets 0, it's free.
-
-    const finalDeliveryPrice = cartSubtotal > 1000 ? 0 : deliveryPrice; // Assuming we keep the > 1000 free logic or similar? 
-    // The previous code had "Gratuite" hardcoded. Let's make it dynamic.
-    // But wait, Checkout.js has logic: const shipping = currentSubtotal > 1000 ? 0 : 30;
-    // I should probably unify this logic. For now, let's use the storeInfo price.
-    // If the user wants to keep the >1000 logic, I should keep it. Let's assume standard logic: deliveryPrice is base, >1000 is free. 
-
     const effectiveShipping = cartSubtotal > 1000 ? 0 : deliveryPrice;
 
     // Close on escape key
