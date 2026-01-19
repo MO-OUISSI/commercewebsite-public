@@ -1,14 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-import { useStore } from '../context/StoreContext';
+
 import ProductCard from '../components/ProductCard';
 import { PRODUCTS } from '../data/products';
 import { MOCK_COLLECTIONS } from '../data/mockData';
 import '../styles/pages/Home.css';
 
 const Home = () => {
-    const { storeInfo } = useStore();
 
     // Directly derive sections from local data for instant performance
     const sections = MOCK_COLLECTIONS.map(coll => {
