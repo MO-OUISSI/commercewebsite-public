@@ -19,10 +19,10 @@ const Footer = () => {
                     {/* Brand Column */}
                     <div className="footer-col brand-col">
                         <Link to="/" className="footer-brand">
-                            {storeInfo?.title?.toUpperCase() || 'NATURA'}
+                            {storeInfo?.title?.toUpperCase() || 'LE BON CHOIX'}
                         </Link>
                         <p className="footer-mission">
-                            {storeInfo?.description }
+                            {storeInfo?.description}
                         </p>
                     </div>
 
@@ -46,7 +46,7 @@ const Footer = () => {
                 </div>
 
                 <div className="footer-bottom">
-                    <p className="copyright">© {new Date().getFullYear()} {storeInfo?.title || 'Natura'} Inc. All rights reserved.</p>
+                    <p className="copyright">© {new Date().getFullYear()} {storeInfo?.title || 'Le Bon Choix'} Inc. All rights reserved.</p>
                     {hasSocial && (
                         <div className="social-links">
                             {storeInfo.socialMedia.instagram && (

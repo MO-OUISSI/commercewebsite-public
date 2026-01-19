@@ -18,15 +18,15 @@ export const MOCK_COLLECTIONS = [
 ];
 
 export const MOCK_STORE_INFO = {
-    name: "OUISSI.",
-    title: "OUISSI.",
+    name: "Le Bon Choix",
+    title: "Le Bon Choix",
     announcementBar: "Livraison 35dh ✅",
     description: "Sustainable footwear for the modern world.",
     logo: "https://via.placeholder.com/150",
     deliveryPrice: 35,
     freeShippingThreshold: 200,
-    email: "hello@natura.com",
-    phone: "+1 (555) 123-4567",
+    email: "",
+    phone: "",
     address: "123 Eco Way, San Francisco, CA 94107",
     socialLinks: {
         instagram: "https://instagram.com",

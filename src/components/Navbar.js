@@ -30,7 +30,7 @@ const Navbar = ({ onOpenSearch, onOpenCart, onOpenMenu, cartCount = 0 }) => {
                 {/* Left: Branding */}
                 <div className="navbar-logo">
                     <Link to="/">
-                        {storeInfo?.title || 'NATURA'}
+                        {storeInfo?.title || 'Le Bon Choix'}
                     </Link>
                 </div>
 

@@ -21,37 +21,33 @@ const Home = () => {
 
     return (
         <div className="home-page">
-            <section className="hero-section">
-                <div className={`hero-bg ${!storeInfo?.photo ? 'clean-design' : ''}`}>
-                    {storeInfo?.photo ? (
-                        <img src={storeInfo.photo} alt={storeInfo.title || 'Hero'} className="hero-image-zoom" />
-                    ) : (
-                        <>
-                            <div className="hero-image-grid">
-                                <div className="hero-image-item hero-image-main">
-                                    <img src="/images/hero/fashion-main.png" alt="Fashion Collection" />
-                                </div>
-                                <div className="hero-image-item hero-image-secondary">
-                                    <img src="/images/hero/fashion-secondary.png" alt="Premium Clothing" />
-                                </div>
-                            </div>
-                        </>
-                    )}
-                    <div className="hero-overlay"></div>
+            <section className="hero-section neon-theme">
+                <div className="hero-bg">
+                    <img src="/neon-bg.png" alt="Neon Atmosphere" className="hero-background-image" />
+                    <div className="hero-overlay-neon"></div>
                 </div>
 
                 <div className="hero-content container">
-                    <div className="hero-info">
-                        <h1 className="hero-title1 animate-up" style={{ animationDelay: '0.2s' }}>
-                            A Better way to buy clothes
-                        </h1>
-                        <p className="hero-subtitle animate-up" style={{ animationDelay: '0.3s' }}>
-                            Experience premium comfort and timeless style. <br className="hidden md:block" />
-                            Designed for everyday wear, made to fit your lifestyle.
-                        </p>
-                        <div className="hero-actions animate-up" style={{ animationDelay: '0.4s' }}>
-                            <Link to="/shop/all" className="btn btn-primary">Shop Collection</Link>
-                            <Link to="/new-arrivals" className="btn btn-secondary">New Arrivals</Link>
+                    <div className="neon-sign-container animate-up">
+                        <div className="neon-sign-circle">
+                            <div className="neon-shoe-icon">
+                                <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="neon-svg-blue">
+                                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                                    <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                                    <line x1="12" y1="22.08" x2="12" y2="12" />
+                                </svg>
+                            </div>
+                            <h1 className="neon-title">Le Bon Choix</h1>
+                            <div className="neon-subtitle-group">
+                                <span className="neon-text-blue">MEILLEURE PRIX</span>
+                                <span className="neon-text-orange">PREMIÈRE QUALITÉ</span>
+                            </div>
+                            <div className="neon-line"></div>
+                        </div>
+
+                        <div className="hero-actions animate-up" style={{ animationDelay: '0.6s' }}>
+                            <Link to="/shop/all" className="btn btn-neon-primary">Shop Collection</Link>
+                            <Link to="/new-arrivals" className="btn btn-neon-secondary">New Arrivals</Link>
                         </div>
                     </div>
                 </div>
